@@ -1,4 +1,4 @@
-import { appReducer, InitialState, RequestStatus, setAppErrorAC, ThemeMode } from "./app-reducer"
+import { appReducer, InitialState, RequestStatus, setAppErrorAC, setAppStatusAC, ThemeMode } from "./app-reducer"
 
 let startState: InitialState
 
@@ -15,4 +15,10 @@ test("correct error should be set", () => {
   let endState = appReducer(startState, setAppErrorAC(newError))
 
   expect(endState.error).toEqual(newError)
+})
+
+test("correct status should be set", () => {
+  let endState = appReducer(startState, setAppStatusAC("loading"))
+
+  expect(endState.status).toEqual("loading")
 })
