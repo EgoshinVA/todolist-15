@@ -1,6 +1,6 @@
 export type ThemeMode = "dark" | "light"
 
-type InitialState = typeof initialState
+export type InitialState = typeof initialState
 export type RequestStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
 
 const initialState = {
